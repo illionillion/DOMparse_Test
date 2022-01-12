@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">test</div>
+        </div>
+    </div>
+    <script>
+        var txt="<span class='d'><span class='e'>:add-text</span></span>";
+        var parser=new DOMParser();
+        var doc=parser.parseFromString(txt,"text/html");//テキストをHTMLに変換
+        console.log(doc);
+        var spans=doc.querySelector(".d");
+        console.log(spans);
+        var e=spans.querySelector(".e");
+        var base=document.querySelector(".a .b .c");
+        base.appendChild(spans);
+    </script>
+</body>
+</html>
